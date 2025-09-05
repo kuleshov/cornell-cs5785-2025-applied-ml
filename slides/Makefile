@@ -18,6 +18,7 @@ reveal.js:
 	git clone git@github.com:hakimel/reveal.js.git
 
 %.slides-for-decktape.html: %.ipynb reveal.js
+	# jupyter nbconvert $< --to slides --reveal-prefix https://unpkg.com/reveal.js@3.9.2 --output t
 	jupyter nbconvert $< --to slides --reveal-prefix reveal.js --output t
 	cp t.slides.html $@
     # sed -i doesn't seem to work on my OSX version, using these temp files instead
@@ -26,7 +27,8 @@ reveal.js:
 	sed '/<title>.*<\/title>/s/<script[^>]*><\/script>//g' t.slides.html > t1.html
     #
     # remove the last script initializing Reveal
-	tac t1.html | sed '1,/<script>/d' | tac > t2.html
+	# tac t1.html | sed '1,/<script>/d' | tac > t2.html
+	perl -0777 -pe 's/\n?<script\b[\s\S]*?<\/script>\s*\Z//' t1.html > t2.html
     #
     # put in our custom Reveal initialization
 	cat reveal-footer >> t2.html
