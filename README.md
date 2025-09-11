@@ -4,6 +4,8 @@ This repo contains executable course notes and slides for the Applied ML course 
 
 Note that these notes are slightly different from the ones used in my Youtube [lecture videos](https://www.youtube.com/watch?v=vcE9WGbi4QY&list=PL2UML_KCiC0UlY7iCQDSiGDMovaupqc83) videos from the Fall 2020 edition of the course. You may find these in my other Github repo.
 
+All PDF slides (from Fall 2024) are available [here](https://drive.google.com/drive/folders/1-M6tNLGOMa4erAMj31jwmm-6m2MK0Prw?usp=sharing).
+
 ## Contents
 
 This repo is organized as follows.
